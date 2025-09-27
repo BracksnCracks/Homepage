@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>BracksnCracks — Professional Recovery & Cybersecurity</title>
+<meta name="description" content="BracksnCracks — Authorized account recovery, incident response, forensics and ethical cybersecurity services. WhatsApp demo available."/>
+<style>
+  /* ---------------- Theme: Light background with dark panels + teal accents ---------------- */
+  :root{
+    --page-bg: #f6f8fa;
+    --panel-bg: #0e1413;
+    --card-bg: #0b1211;
+    --teal: #0fbfa0;
+    --teal-2:#14b687;
+    --muted: #9aa4ad;
+    --text-dark: #051417;
+    --radius:12px;
+    --maxw:1180px;
+    --mono: "Courier New", Courier, monospace;
+  }
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:var(--page-bg);color:var(--text-dark);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:22px auto;padding:18px}
+  /* header */
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,rgba(15,191,160,0.12),rgba(20,182,135,0.06));display:flex;align-items:center;justify-content:center;border:1px solid rgba(15,191,160,0.12)}
+  .logo svg{width:44px;height:44px}
+  h1{margin:0;font-size:20px}
+  .tagline{color:var(--muted);font-size:13px}
+  .top-actions{display:flex;gap:10px;align-items:center}
+  .lang-btn{background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--text-dark);padding:6px 10px;border-radius:8px;cursor:pointer}
+  a.primary-cta{background:linear-gradient(90deg,var(--teal),var(--teal-2));color:#03211b;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:800}
+  /* layout */
+  .hero{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:18px;align-items:start}
+  .left{background:linear-gradient(180deg,#ffffff,#f2f6f6);padding:22px;border-radius:14px;border:1px solid rgba(0,0,0,0.04)}
+  .right{background:var(--card-bg);padding:18px;border-radius:12px;color:#cfeee0;border:1px solid rgba(255,255,255,0.03)}
+  .hero-title{font-size:28px;margin:0;color:var(--text-dark)}
+  .hero-sub{color:var(--muted);margin-top:12px}
+  .hero-cta{display:flex;gap:10px;margin-top:16px}
+  .btn{padding:10px 12px;border-radius:10px;border:none;cursor:pointer}
+  .btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+  /* services grid */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+  .svc{background:var(--panel-bg);padding:14px;border-radius:10px;color:#dffbee;border:1px solid rgba(255,255,255,0.02);transition:transform .16s,box-shadow .16s}
+  .svc:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,0.12)}
+  .svc h3{margin:0;color:var(--teal-2);font-size:16px}
+  .svc p{color:var(--muted);margin:8px 0 10px;font-size:13px}
+  .svc .meta{display:flex;justify-content:space-between;align-items:center}
+  .price{font-weight:800}
+  .time{color:var(--muted);font-size:13px}
+  /* pricing list */
+  .pricing{margin-top:16px;border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,0.06)}
+  .pricing-row{display:flex;justify-content:space-between;padding:12px;background:#fff;border-bottom:1px solid rgba(0,0,0,0.04)}
+  .pricing-row .label{font-weight:700}
+  .pricing-row .meta{color:var(--muted);text-align:right}
+  /* about */
+  .about{margin-top:18px;background:#fff;padding:14px;border-radius:10px;border:1px solid rgba(0,0,0,0.04);color:var(--text-dark)}
+  .about h3{color:var(--teal-2);margin-top:0}
+  .about p{line-height:1.6}
+  .refund{margin-top:12px;padding:12px;border-radius:8px;background:linear-gradient(180deg,#fff,#f6f9f9);border:1px solid rgba(0,0,0,0.03)}
+  /* reviews */
+  .reviews-wrap{margin-top:16px}
+  .reviews-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .badge{background:linear-gradient(90deg,var(--teal),var(--teal-2));color:#022217;padding:6px 10px;border-radius:999px;font-weight:800}
+  .carousel{margin-top:12px;position:relative}
+  .review-card{background:var(--panel-bg);padding:14px;border-radius:10px;color:#cfeee0;border:1px solid rgba(255,255,255,0.02)}
+  .review-meta{color:var(--muted);font-size:13px;margin-top:8px}
+  .carousel .nav{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:8px;background:rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .nav.left{left:-12px}
+  .nav.right{right:-12px}
+  .stars{color:#ffd166}
+  /* sidebar contact (floating on desktop) */
+  .sidebar{position:sticky;top:20px}
+  .contact-card{background:linear-gradient(180deg,#071211,#0a1a17);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+  .contact-item{display:flex;align-items:center;gap:10px;margin-top:8px}
+  .contact-item a{color:var(--teal);text-decoration:none;font-weight:800}
+  /* footer */
+  footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px;padding-bottom:18px}
+  /* responsive */
+  @media (max-width:1100px){.hero{grid-template-columns:1fr;}.services{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:720px){.services{grid-template-columns:1fr}.top-actions{flex-direction:column;align-items:flex-end}.logo{width:56px;height:56px}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- small SVG logo, downloadable separately if needed -->
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#0fbfa0"/><stop offset="1" stop-color="#14b687"/></linearGradient></defs>
+            <rect x="6" y="10" width="88" height="80" rx="12" fill="url(#lg)" opacity="0.07"/>
+            <path d="M50 6 L86 20 V44 C86 64 70 84 50 94 C30 84 14 64 14 44 V20 Z" fill="#06110e" stroke="url(#lg)" stroke-width="2"/>
+            <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-weight="800" font-size="28" fill="#0fbfa0">BC</text>
+          </svg>
+        </div>
+        <div>
+          <h1 id="brandTitle">BracksnCracks</h1>
+          <div class="tagline" id="brandTag">Authorized account recovery & cybersecurity</div>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button class="lang-btn" id="btnEn">EN</button>
+        <button class="lang-btn" id="btnEs">ES</button>
+        <a class="primary-cta" id="contactWhats" href="https://wa.me/18166298499" target="_blank">Contact via WhatsApp</a>
+      </div>
+    </header>
+
+    <!-- Main layout -->
+    <section class="hero" aria-label="Main">
+      <!-- Left column (main content) -->
+      <div class="left">
+        <h2 class="hero-title" id="heroTitle">Professional Hacking Services — Authorized & Confidential</h2>
+        <p class="hero-sub" id="heroSub">We perform recovery and incident response only with documented authorization. Below are our most requested services — pricing & typical times included.</p>
+
+        <div class="hero-cta">
+          <button class="btn primary" id="openWhatsDemo" style="background:linear-gradient(90deg,var(--teal),var(--teal-2));color:#022217">Open WhatsApp Demo</button>
+          <a class="btn ghost" href="mailto:legionstarks21@gmail.com">Email Us</a>
+        </div>
+
+        <!-- Services grid -->
+        <div class="services" id="servicesGrid" aria-hidden="false">
+          <!-- filled by JS -->
+        </div>
+
+        <!-- About / Professional Hacking Services (copied from Weebly) -->
+        <div class="about" id="aboutBlock">
+          <h3>PROFESSIONAL HACKING SERVICES</h3>
+          <div id="weeblyCopy">
+            <!-- filled by JS from CONFIG.weeblyText -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right column (sidebar contact + pricing + testimonials) -->
+      <aside class="sidebar">
+        <div class="contact-card">
+          <h4 style="margin:0;color:var(--teal-2)">Get in touch</h4>
+          <div class="contact-item"><strong style="width:90px;color:#cfeee0">WhatsApp</strong><a id="waLink" href="https://wa.me/18166298499" target="_blank">+1 816-629-8499</a></div>
+          <div class="contact-item"><strong style="width:90px;color:#cfeee0">Email</strong><a id="mailLink" href="mailto:legionstarks21@gmail.com">legionstarks21@gmail.com</a></div>
+          <div class="contact-item"><strong style="width:90px;color:#cfeee0">Telegram</strong><a id="tgLink" href="https://t.me/Ethical_bruce" target="_blank">@Ethical_bruce</a></div>
+          <div style="margin-top:10px">
+            <a class="primary-cta" id="ctaQuote" href="#" style="display:inline-block;text-align:center;width:100%;">Request Quote</a>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="contact-card">
+          <h4 style="margin:0;color:var(--teal-2)">Services Pricing</h4>
+          <div class="pricing" id="pricingList">
+            <!-- JS will inject pricing rows -->
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="contact-card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:800;color:#cfeee0">209 verified thoughts</div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="badge" style="background:linear-gradient(90deg,var(--teal),var(--teal-2));color:#022217;padding:8px 10px;border-radius:999px;font-weight:800">5.0</div>
+          </div>
+
+          <div class="reviews-wrap">
+            <div class="carousel" id="carousel">
+              <div class="nav left" id="prevBtn" aria-hidden="true">&#9664;</div>
+              <div class="nav right" id="nextBtn" aria-hidden="true">&#9654;</div>
+              <div id="carouselInner">
+                <!-- JS will inject review slides -->
+              </div>
+            </div>
+            <div style="margin-top:8px;color:var(--muted);font-size:12px">Recent verified feedback</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      © <span id="year"></span> BracksnCracks — All services provided only with written authorization.
+    </footer>
+  </div>
+
+<script>
+/* =========================
+   CONFIG — edit only here
+   ========================= */
+const CONFIG = {
+  whatsapp: "18166298499",
+  email: "legionstarks21@gmail.com",
+  telegram: "https://t.me/Ethical_bruce",
+  demoLink: "https://bracksncracks.github.io/WhatsappClone/",
+  /* services grid (title, description, price, time, redirect behavior) */
+  services: [
+    {id:'wa', title:'WhatsApp Cloning', desc:'Simulated UI & recovery workflows — authorized only.', price:'—', time:'Varies', hrefType:'demo'},
+    {id:'fb', title:'Facebook Recovery', desc:'Recover hacked/locked Facebook accounts and secure them.', price:'$150', time:'3–5 Hrs', hrefType:'wa'},
+    {id:'email', title:'Email Recovery', desc:'Recover Gmail, Outlook, Yahoo and other webmail accounts.', price:'$200', time:'3–5 Hrs', hrefType:'wa'},
+    {id:'phone', title:'Smart Phone', desc:'Smartphone access recovery and forensic triage.', price:'$300–$500', time:'3–5 Hrs', hrefType:'wa'},
+    {id:'website', title:'Website', desc:'Restore admin access, CMS recovery & cleanup.', price:'$500–$2000', time:'4–5 Hrs', hrefType:'wa'},
+    {id:'db', title:'Database', desc:'Database recovery and extraction (authorized only).', price:'$500–$2000', time:'5–10 Hrs', hrefType:'wa'},
+    {id:'special', title:'Special Hack', desc:'Custom authorized recovery and special cases.', price:'$500–$5000', time:'10 Hrs', hrefType:'wa'},
+    {id:'system', title:'System Hack', desc:'System-level recovery, OS/account restore (authorized).', price:'$500–$2000', time:'5–10 Hrs', hrefType:'wa'},
+    {id:'exploits', title:'Exploits', desc:'Authorized exploit testing & recovery support.', price:'$300–$500', time:'10 Hrs', hrefType:'wa'},
+    {id:'onlyfans', title:'OnlyFans Recovery', desc:'Subscription account recovery with identity checks.', price:'$200', time:'24–72 Hrs', hrefType:'wa'},
+    {id:'wallet', title:'Wallet Recovery', desc:'Assist with wallet access recovery & seed checking (non-destructive).', price:'$250', time:'48–96 Hrs', hrefType:'wa'},
+    {id:'2fa', title:'2FA Recovery', desc:'Multi-factor recovery & device reclaims.', price:'$140', time:'24–72 Hrs', hrefType:'wa'}
+  ],
+  /* Pricing list EXACT as you gave (1..8) */
+  pricing: [
+    {label:"Facebook", price:"$150", time:"3–5 Hrs"},
+    {label:"Email", price:"$200", time:"3–5 Hrs"},
+    {label:"Smart Phone", price:"$300–$500", time:"3–5 Hrs"},
+    {label:"Website", price:"$500–$2000", time:"4–5 Hrs"},
+    {label:"Database", price:"$500–$2000", time:"5–10 Hrs"},
+    {label:"Special Hack", price:"$500–$5000", time:"10 Hrs"},
+    {label:"System Hack", price:"$500–$2000", time:"5–10 Hrs"},
+    {label:"Exploits", price:"$300–$500", time:"10 Hrs"}
+  ],
+  /* reviews (dates updated to 2025) */
+  reviews: [
+    {author:"Elsbeth Brookes", date:"Sept 12, 2025", text:"Now i know the reason why most people tend to recommend Broussard this much, he is literally the best recovery agent out there; it was unbearable for me after numerous appeals to the support team and nothing was done, until i came across this webpage."},
+    {author:"Octavio", date:"Sept 8, 2025", text:"If you're unable to recover your account through the support team, consider reaching out to @Sgt_bruce1 for additional assistance."},
+    {author:"Nidhi Gupta", date:"Aug 14, 2025", text:"5/5 STARS! Amazing agent! Thank you so much! Excellent communication, very knowledgeable and professional."},
+    {author:"Marco", date:"July 29, 2025", text:"Fast and reliable. Recovered my account within hours and kept me updated."}
+  ],
+  /* full weebly write-up */
+  weeblyText: `
+<p>It is normal for you to think that the process of recovering accounts can be extremely tedious and cumbersome. However, it is the opposite in reality. With our tool and experience, the entire procedure to recover accounts is made easy. We at BRACKS &amp; CRACKS exactly knows to satisfy its client by providing the latest and highly protected tool to give you smooth access to lost accounts.</p>
+
+<h4>Reason to Hire a Hacker</h4>
+<p>Many peoples ask that why they should choose us when hiring a hacker and why not others. If a hackers for hire company does not have some unique features than other company then you might get worried of scammers. In short we want to tell you some Feature we have:</p>
+<ol>
+<li>If you hire a hacker, you might have worries of losing your money. We won’t keep a cent if we can’t do our job. 100% refund if job is not completed.</li>
+<li>For Urgency You may need instant response. For this we have setup our private chat server and even we provide support through WhatsApp.</li>
+<li>Regularly update our customers of the progress on the given hacking job.</li>
+<li>Remember, We are not team of kids hackers! We have reputations to keep.</li>
+<li>Maximum time-frame is 2 days of any hacking job (exceptions apply for complex database/site hacks).</li>
+<li>Best privacy and confidentiality.</li>
+</ol>
+
+<p>Recover your hacked, disabled or locked social media accounts and also get them secured. We specialize in WhatsApp, Facebook, Instagram, Twitter, Snapchat, Tiktok, Emails, OnlyFans, phone Tracking, Wallet recovery, etc. Just kindly send a DM for assistance.</p>
+
+<p><strong>Refund POLICY:</strong> IN CASE OF FAILED JOB 100%! Our services are 100% guaranteed, carried out with utmost discretion and lethal accuracy. With over 1000 satisfied long term clients and years of hacking and programming experience, you can be sure of getting effective results on time, hassle free. Services can also be adapted to more effectively suit your needs. However, if the results don't meet your expectations, you can easily request a refund.</p>
+
+<p>Hire a hacker for almost any kind of hacking services. Notable services are facebook hacking, email hacking, web and database hacking, smartphone hacking. For each hacking services price is different. Finding real hacker for hire online is harder to find since there are lots of scammers. Even we also get lots of fake customers who only waste our time. We both need to be careful about this. For this we have private terms so that we are both safe. Also do not trust anyone who is promising to hack anything for $50 (Simply not possible). Hire a hacker for real problem!</p>
+
+<p><strong>Tools:</strong> 2FA key api purchase $250 btc</p>
+
+<p><strong>Bitcoin Address</strong></p>
+<p><code>1H4SiMRfDeDeP4dmAqUcrGbNmwKHWJ9Xt7</code></p>
+`
+};
+/* ========================= */
+
+/* Wire up header contact buttons */
+document.getElementById('contactWhats').href = `https://wa.me/${CONFIG.whatsapp}`;
+document.getElementById('waLink').href = `https://wa.me/${CONFIG.whatsapp}`;
+document.getElementById('mailLink').href = `mailto:${CONFIG.email}`;
+document.getElementById('tgLink').href = CONFIG.telegram;
+document.getElementById('openWhatsDemo').addEventListener('click', ()=> window.open(CONFIG.demoLink,'_blank'));
+document.getElementById('ctaQuote').addEventListener('click', ()=> window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent('Hello, I want a quote for services')}`,'_blank'));
+
+/* Populate services grid */
+const servicesGrid = document.getElementById('servicesGrid');
+CONFIG.services.forEach(s=>{
+  const card = document.createElement('div');
+  card.className = 'svc';
+  // determine href
+  let href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent('Hello, I want help with ' + s.title)}`;
+  if(s.hrefType === 'demo') href = CONFIG.demoLink;
+  else if(s.hrefType === 'wa') href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent('Hello, I want help with ' + s.title)}`;
+
+  card.innerHTML = `
+    <h3>${s.title}</h3>
+    <p>${s.desc}</p>
+    <div class="meta">
+      <div class="time">${s.time}</div>
+      <div class="price">${s.price}</div>
+    </div>
+    <div style="margin-top:10px">
+      <a href="${href}" target="_blank" class="primary-cta" style="display:inline-block">${s.hrefType === 'demo' ? 'Open Demo' : 'Hire Now'}</a>
+    </div>
+  `;
+  servicesGrid.appendChild(card);
+});
+
+/* Populate pricing list EXACT */
+const pricingList = document.getElementById('pricingList');
+CONFIG.pricing.forEach(p=>{
+  const row = document.createElement('div');
+  row.className = 'pricing-row';
+  row.innerHTML = `<div class="label">${p.label}</div><div class="meta"><div>${p.time}</div><div style="font-weight:800">${p.price}</div></div>`;
+  pricingList.appendChild(row);
+});
+
+/* Inject Weebly copied text */
+document.getElementById('weeblyCopy').innerHTML = CONFIG.weeblyText;
+
+/* Populate carousel (testimonials) */
+const carouselInner = document.getElementById('carouselInner');
+CONFIG.reviews.forEach((r, idx)=>{
+  const slide = document.createElement('div');
+  slide.className = 'review-card';
+  slide.style.display = idx === 0 ? 'block' : 'none';
+  slide.innerHTML = `<div>${escapeHtml(r.text)}</div><div class="review-meta">${escapeHtml(r.author)} · ${escapeHtml(r.date)}</div>`;
+  carouselInner.appendChild(slide);
+});
+
+/* Carousel logic: auto-rotate + manual nav */
+let slideIndex = 0;
+const slides = Array.from(carouselInner.children);
+const totalSlides = slides.length;
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+function showSlide(i){
+  slides.forEach((s, idx)=> s.style.display = idx === i ? 'block' : 'none');
+  slideIndex = i;
+}
+prevBtn.addEventListener('click', ()=> showSlide((slideIndex - 1 + totalSlides) % totalSlides));
+nextBtn.addEventListener('click', ()=> showSlide((slideIndex + 1) % totalSlides));
+
+let rotateTimer = setInterval(()=> {
+  showSlide((slideIndex + 1) % totalSlides);
+}, 4500);
+
+/* Pause rotation on hover to be camera-friendly */
+carouselInner.addEventListener('mouseover', ()=> clearInterval(rotateTimer));
+carouselInner.addEventListener('mouseout', ()=> { clearInterval(rotateTimer); rotateTimer = setInterval(()=> showSlide((slideIndex + 1) % totalSlides), 4500); });
+
+/* Language toggle (simple translations for main headings & CTA) */
+document.getElementById('btnEn').addEventListener('click', ()=> setLang('en'));
+document.getElementById('btnEs').addEventListener('click', ()=> setLang('es'));
+function setLang(l){
+  if(l === 'es'){
+    document.getElementById('heroTitle').innerText = 'Servicios Profesionales — Recuperación y Respuesta';
+    document.getElementById('heroSub').innerText = 'Realizamos recuperaciones y respuesta a incidentes solo con autorización documentada. A continuación nuestros servicios más solicitados.';
+    document.getElementById('openWhatsDemo').innerText = 'Abrir demo de WhatsApp';
+    document.getElementById('contactWhats').innerText = 'Contactar por WhatsApp';
+    document.getElementById('brandTitle').innerText = 'BracksnCracks';
+    document.getElementById('brandTag').innerText = 'Recuperación autorizada y ciberseguridad';
+  } else {
+    document.getElementById('heroTitle').innerText = 'Professional Hacking Services — Authorized & Confidential';
+    document.getElementById('heroSub').innerText = 'We perform recovery and incident response only with documented authorization. Below are our most requested services — pricing & typical times included.';
+    document.getElementById('openWhatsDemo').innerText = 'Open WhatsApp Demo';
+    document.getElementById('contactWhats').innerText = 'Contact via WhatsApp';
+    document.getElementById('brandTitle').innerText = 'BracksnCracks';
+    document.getElementById('brandTag').innerText = 'Authorized account recovery & cybersecurity';
+  }
+}
+setLang('en');
+
+/* Helpers */
+function escapeHtml(s){ if(!s) return ''; return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+document.getElementById('year').innerText = new Date().getFullYear();
+
+/* Accessibility: keyboard nav for carousel */
+prevBtn.tabIndex = 0; nextBtn.tabIndex = 0;
+prevBtn.addEventListener('keydown', e=> { if(e.key==='Enter') prevBtn.click(); });
+nextBtn.addEventListener('keydown', e=> { if(e.key==='Enter') nextBtn.click(); });
+
+/* Prevent duplicated interface on scroll — layout is static; no cloning operations here. */
+/* End of script */
+</script>
+</body>
+</html>
